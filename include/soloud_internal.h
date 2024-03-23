@@ -68,7 +68,7 @@ namespace SoLoud
 	// OSS back-end initialization call
 	result oss_init(SoLoud::Soloud *aSoloud, unsigned int aFlags = Soloud::CLIP_ROUNDOFF, unsigned int aSamplerate = 44100, unsigned int aBuffer = 2048, unsigned int aChannels = 2);
 
-	// PS Vita homebrew back-end initialization call	
+	// PS Vita homebrew back-end initialization call
 	result vita_homebrew_init(SoLoud::Soloud *aSoloud, unsigned int aFlags = Soloud::CLIP_ROUNDOFF, unsigned int aSamplerate = 44100, unsigned int aBuffer = 2048, unsigned int aChannels = 2);
 
 	// ALSA back-end initialization call
@@ -125,7 +125,7 @@ namespace SoLoud
 #define FOR_ALL_VOICES_POST_3D \
 						} \
 			h_++; \
-						} 
+						}
 
 #define FOR_ALL_VOICES_PRE_EXT \
 		handle *h_ = NULL; \
@@ -159,6 +159,6 @@ namespace SoLoud
 #define FOR_ALL_VOICES_POST_3D_EXT \
 						} \
 			h_++; \
-						} 
+						}
 
 #endif
