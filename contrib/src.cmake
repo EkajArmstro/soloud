@@ -165,13 +165,22 @@ if (SOLOUD_BACKEND_SDL2)
 
 endif()
 
-if (SOLOUD_BACKEND_ALSA)                     
-    add_definitions (-DWITH_ALSA)                
-                                           
-    set (BACKENDS_SOURCES              
-        ${BACKENDS_SOURCES} 
+if (SOLOUD_BACKEND_SDL3)
+	add_definitions (-DWITH_SDL3_STATIC)
+
+	set (BACKENDS_SOURCES
+		${BACKENDS_SOURCES}
+		${BACKENDS_PATH}/sdl3_static/soloud_sdl3_static.cpp
+	)
+endif()
+
+if (SOLOUD_BACKEND_ALSA)
+    add_definitions (-DWITH_ALSA)
+
+    set (BACKENDS_SOURCES
+        ${BACKENDS_SOURCES}
         ${BACKENDS_PATH}/alsa/soloud_alsa.cpp
-    )                                              
+    )
 
     find_library (ALSA_LIBRARY asound)
     set (LINK_LIBRARIES
@@ -294,6 +303,7 @@ if (SOLOUD_STATIC)
 	add_library(${TARGET_NAME} STATIC ${TARGET_SOURCES})
 endif()
 
+target_include_directories(${TARGET_NAME} PUBLIC ${HEADER_PATH})
 target_link_libraries (${TARGET_NAME} ${LINK_LIBRARIES})
 
 include (Install)

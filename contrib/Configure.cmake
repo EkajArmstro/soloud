@@ -20,6 +20,9 @@ print_option_status (SOLOUD_BACKEND_NULL "NULL backend")
 option (SOLOUD_BACKEND_SDL2 "Set to ON for building SDL2 backend" ON)
 print_option_status (SOLOUD_BACKEND_SDL2 "SDL2 backend")
 
+option (SOLOUD_BACKEND_SDL3 "Set to ON for building SDL3 backend" OFF)
+print_option_status (SOLOUD_BACKEND_SDL3 "SDL3 backend")
+
 option (SOLOUD_BACKEND_ALSA "Set to ON for building ALSA backend" OFF)
 print_option_status (SOLOUD_BACKEND_ALSA "ALSA backend")
 
